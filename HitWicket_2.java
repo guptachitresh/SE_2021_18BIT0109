@@ -65,6 +65,49 @@ public class HitWicket_2 {
                 for (j = 0; j < 5; j++) {
                     flag2=0;
                     if (s1.equals(board[i][j])) {
+                        if(s1.equals("A-H2")){
+                            if(s.substring(3)=="FL"){
+                                    if (issafe(i - 2, j-2, board,'A')) {
+                                        board[i][j] = "-";
+                                        board[i -2][j-2] = s1;
+                                        board[i-1][j-1]="-";
+                                    }else{
+                                        flag2=1;
+                                        break;
+                                    }
+                            }
+                            if(s.substring(3)=="FR"){
+                                if (issafe(i - 2, j+2, board,'A')) {
+                                    board[i][j] = "-";
+                                    board[i -2][j+2] = s1;
+                                    board[i-1][j+1]="-";
+                                }else{
+                                    flag2=1;
+                                    break;
+                                }
+                        }
+                        if(s.substring(3)=="BL"){
+                            if (issafe(i + 2, j-2, board,'A')) {
+                                board[i][j] = "-";
+                                board[i +2][j-2] = s1;
+                                board[i+1][j-1]="-";
+                            }else{
+                                flag2=1;
+                                break;
+                            }
+                    }
+                    if(s.substring(3)=="BR"){
+                        if (issafe(i + 2, j+2, board,'A')) {
+                            board[i][j] = "-";
+                            board[i +2][j+2] = s1;
+                            board[i+1][j+1]="-";
+                        }else{
+                            flag2=1;
+                            break;
+                        }
+                }
+                
+                    }
                         if (ch == 'F') {
                             if(s1.equals("A-H1")){
                                 if (issafe(i - 2, j, board,'A')) {
@@ -171,6 +214,49 @@ public class HitWicket_2 {
             for (i = 0; i < 5 && flag1 == 0; i++) {
                 for (j = 0; j < 5; j++) {
                     if (s1.equals(board[i][j])) {
+                        if(s1.equals("B-H2")){
+                            if(s.substring(3)=="FL"){
+                                    if (issafe(i + 2, j-2, board,'A')) {
+                                        board[i][j] = "-";
+                                        board[i +2][j-2] = s1;
+                                        board[i+1][j-1]="-";
+                                    }else{
+                                        flag2=1;
+                                        break;
+                                    }
+                            }
+                            if(s.substring(3)=="FR"){
+                                if (issafe(i + 2, j+2, board,'A')) {
+                                    board[i][j] = "-";
+                                    board[i +2][j+2] = s1;
+                                    board[i+1][j+1]="-";
+                                }else{
+                                    flag2=1;
+                                    break;
+                                }
+                        }
+                        if(s.substring(3)=="BL"){
+                            if (issafe(i - 2, j-2, board,'A')) {
+                                board[i][j] = "-";
+                                board[i -2][j-2] = s1;
+                                board[i-1][j-1]="-";
+                            }else{
+                                flag2=1;
+                                break;
+                            }
+                    }
+                    if(s.substring(3)=="BR"){
+                        if (issafe(i - 2, j+2, board,'A')) {
+                            board[i][j] = "-";
+                            board[i -2][j+2] = s1;
+                            board[i-1][j+1]="-";
+                        }else{
+                            flag2=1;
+                            break;
+                        }
+                }
+                
+                    }
                         if (ch == 'F') {
                             if(s1.equals("B-H1")){
                                 if (issafe(i+2, j, board,'B')) {
